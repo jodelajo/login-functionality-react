@@ -9,35 +9,38 @@ function Register() {
 
     return (<form onSubmit={handleSubmit(onSubmit)}>
             <fieldset className="wrapper">
-                <legend>Login</legend>
-                <label htmlFor="username-field">
+                <legend>Register</legend>
+                <label htmlFor="username-field" className="label">
                     Username:
                     <input
                         type="text"
                         name="username"
                         id="username-field"
                         {...register("username")}
+                        className="input"
                     />
                 </label>
-                <label htmlFor="email-field">
+                <label htmlFor="email-field" className="label">
                    Email:
                     <input
                         type="text"
                         name="email"
                         id="email-field"
                         {...register("email")}
+                        className="input"
                     />
                 </label>
-                <label htmlFor="password-field">
+                <label htmlFor="password-field" className="label">
                     Password:
                     <input
                         type="text"
                         name="password"
                         id="password-field"
                         {...register("password")}
+                        className="input"
                     />
                 </label>
-                <button type="submit">Send</button>
+                <button type="submit" className="button">Send</button>
             </fieldset>
         </form>
     );

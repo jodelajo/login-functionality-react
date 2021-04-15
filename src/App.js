@@ -15,6 +15,7 @@ import Nav from "./components/Nav";
 
 function App() {
   return (
+      <div className="page-wrapper">
       <Router>
           <Nav />
           <Switch>
@@ -32,6 +33,7 @@ function App() {
               </Route>
           </Switch>
       </Router>
+      </div>
   );
 }
 
