@@ -7,16 +7,16 @@ function Nav() {
     <nav>
         <ul className="navbar">
             <li>
-                <NavLink to="/">Home</NavLink>
+                <NavLink to="/" exact activeClassName="active-link">Home</NavLink>
             </li>
             <li>
-                <NavLink to="/register">Register</NavLink>
+                <NavLink to="/register" activeClassName="active-link">Register</NavLink>
             </li>
             <li>
-                <NavLink to="/log-in">Log in</NavLink>
+                <NavLink to="/log-in" activeClassName="active-link">Log in</NavLink>
             </li>
             <li>
-                <NavLink to="/profile">Profile</NavLink>
+                <NavLink to="/profile" activeClassName="active-link">Profile</NavLink>
             </li>
         </ul>
     </nav>
