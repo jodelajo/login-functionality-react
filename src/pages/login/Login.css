@@ -27,10 +27,11 @@
 .button {
     margin-top: 6px;
     padding: 4px 8px;
-    background-color: #CCCBCB;
-    color: white;
+    background-color: #B3B2B1;
+    color: red;
     border: none;
     font-variant: all-small-caps;
+    font-weight: bold;
     font-size: 30px;
     cursor: pointer;
 }
