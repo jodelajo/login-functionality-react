@@ -9,14 +9,14 @@ import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
 import Profile from "./pages/profile/Profile";
 import Home from "./pages/home/Home";
-import Nav from "./components/Nav";
+import Nav from "./components/navbar/Nav";
 
 
 
 function App() {
   return (
       <div className="page-wrapper">
-      <Router>
+
           <Nav />
           <Switch>
               <Route exact path="/">
@@ -32,7 +32,7 @@ function App() {
                   <Profile />
               </Route>
           </Switch>
-      </Router>
+
       </div>
   );
 }
