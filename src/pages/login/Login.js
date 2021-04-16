@@ -4,6 +4,7 @@ import { useForm, } from "react-hook-form";
 
 import axios from 'axios';
 import { AuthContext} from "../../components/context/AuthContext";
+import {Link} from "react-router-dom";
 
 // 1. importeer axios
 // 2. async functie maken
@@ -24,7 +25,7 @@ function Login() {
 
     // const onSubmit = data => console.log(data);
     async function onSubmit(data) {
-        console.log(data);
+        // console.log(data);
         try {
             const result = await axios.post('http://localhost:3000/login', data)
             console.log(result.data.accessToken)
@@ -62,6 +63,8 @@ function Login() {
                     />
                 </label>
                 <button type="submit" className="button">Send</button>
+                <p className="inlog">Nog geen account? Ga dan direct naar de <Link to='/register'>registreer pagina</Link></p>
+
             </fieldset>
         </form>
     );
