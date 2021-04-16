@@ -30,7 +30,7 @@ function Login() {
             console.log(result.data.accessToken)
 
             login(result.data.accessToken)
-            // history.push("/profile")
+
 
         } catch (e) {
             console.error(e)

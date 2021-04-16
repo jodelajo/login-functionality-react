@@ -11,7 +11,7 @@ function Profile() {
         <h3>Gegevens</h3>
         <p><strong>Gebruikersnaam:</strong> {user && user.username}</p>
         <p><strong>Email:</strong> {user && user.email}</p>
-        <button type="button" onClick={logout}>uitloggen</button>
+        <button type="button" onClick={logout} className="button">uitloggen</button>
     </div>
 }
 export default Profile
