@@ -5,6 +5,7 @@ import './Profile.css';
 function Profile() {
     const { user, logout } = useContext(AuthContext)
     console.log(user)
+
     return <div className="content">
         <h2>Jouw profielpagina</h2>
         <h3>Gegevens</h3>

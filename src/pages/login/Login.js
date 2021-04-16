@@ -1,7 +1,6 @@
 import React, {useContext} from 'react';
 import './Login.css';
 import { useForm, } from "react-hook-form";
-import { useHistory} from 'react-router-dom';
 
 import axios from 'axios';
 import { AuthContext} from "../../components/context/AuthContext";
@@ -19,7 +18,7 @@ import { AuthContext} from "../../components/context/AuthContext";
 function Login() {
     const { login } = useContext(AuthContext)
     const { handleSubmit, register } = useForm();
-    const history = useHistory();
+
 
 
 

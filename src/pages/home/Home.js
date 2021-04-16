@@ -1,9 +1,9 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import './Home.css';
-import { AuthContext} from "../../components/context/AuthContext";
+
 
 function Home() {
-    // const {logout } = useContext(AuthContext)
+
 
     return <div className="content">
         <h2>Welkom</h2>
