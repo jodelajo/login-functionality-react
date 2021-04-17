@@ -40,15 +40,17 @@ function AuthContextProvider({children}) {
             console.error(e)
         }
     }
-
     useEffect(()=>{
         const token = localStorage.getItem('token')
-        if(token !== undefined)
+        if(token !== undefined && authState.user === null) {
+            fetchUserData(token)
+        } else {
             setAuthState({
                 user: null,
                 status: 'done',
             })
-        fetchUserData(token)
+        }
+
     },[])
 
     function loginFunction(jwtToken) {

@@ -1,6 +1,6 @@
 
-//als ik site refresh in browser, dan crasht hij. Als  er niemand is ingelogd.
-//als ik token verwijder uit localhost in browser - dan crasht ie
+//als ik site refresh in browser en local storage is leeg, dan crasht hij. Als  er niemand is ingelogd.
+//als ik token verwijder uit localhost in browser (bij '/profile') - dan crasht ie
 //als ik site opstart zonder ingelogd te zijn, dan crasht ie (volgens mij)
 
 
@@ -40,15 +40,17 @@ function AuthContextProvider({children}) {
             console.error(e)
         }
     }
-
     useEffect(()=>{
         const token = localStorage.getItem('token')
-        if(token !== undefined)
+        if(token !== undefined && authState.user === null) {
+            fetchUserData(token)
+        } else {
             setAuthState({
                 user: null,
                 status: 'done',
             })
-        fetchUserData(token)
+        }
+
     },[])
 
     function loginFunction(jwtToken) {
