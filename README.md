@@ -1,3 +1,8 @@
+als ik site refresh in browser, dan crasht hij.
+als ik token verwijder uit localhost in browser - dan crasht ie
+als ik de browser refresh, dan crasht ie
+als ik site opstart zonder ingelogd te zijn, dan crasht ie (volgend mij)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -9,11 +9,21 @@ function AuthContextProvider({children}) {
         user: null,
         status: 'pending',
     })
-
-    async function fetchUserData(jwtToken) {
+    useEffect(()=>{
+        const token = localStorage.getItem('token')
+        if(token !== undefined)
+            setAuthState({
+                user: null,
+                status: 'done',
+            })
+    },[])
+    async function loginFunction(jwtToken) {
+        // console.log(jwtToken)
         const decoded = jwt_decode(jwtToken)
         const userid = decoded.sub;
-
+        // console.log(userid)
+        console.log(decoded)
+        localStorage.setItem('token', jwtToken)
         try {
             const result = await axios.get(`http://localhost:3000/600/users/${userid}`, {
                 headers: {
@@ -30,36 +40,14 @@ function AuthContextProvider({children}) {
                 },
                 status: 'done',
             });
+            history.push("/profile")
         } catch (e) {
             console.error(e)
         }
     }
-
-    useEffect(()=>{
-        const token = localStorage.getItem('token')
-        if(token !== undefined)
-            setAuthState({
-                user: null,
-                status: 'done',
-            })
-        fetchUserData(token)
-    },[])
-
-    async function loginFunction(jwtToken) {
-        localStorage.setItem('token', jwtToken)
-        fetchUserData(jwtToken)
-        history.push('/profile')
-    }
-
     function logOutFunction() {
-        localStorage.clear();
-        setAuthState({
-            user: null,
-            status: 'done',
-        })
-        history.push('/')
+        console.log("Log uit")
     }
-
     const data = {
         ...authState,
         login: loginFunction,
