@@ -26,7 +26,11 @@ function Register() {
         console.log(data);
         toggleLoading(false)
         try {
-            const result = await axios.post('http://localhost:3000/register', data);
+            const result = await axios.post('http://localhost:3000/register', {
+                email: data.email,
+                password: data.password,
+                username: data.username,
+            });
             console.log(result)
 
             toggleLoading(true)

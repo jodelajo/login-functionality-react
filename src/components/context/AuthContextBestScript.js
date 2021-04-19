@@ -42,7 +42,7 @@ function AuthContextProvider({children}) {
     }
     useEffect(()=>{
         const token = localStorage.getItem('token')
-        if(token !== undefined && authState.user === null) {
+        if(token !== null && authState.user === null) {
             fetchUserData(token)
         } else {
             setAuthState({
